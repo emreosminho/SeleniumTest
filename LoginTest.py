@@ -47,6 +47,39 @@ if "You logged into a secure area!" in result:
 else:
     print("Tekrar deneyiniz...")
 
+driver.back()
+
+print("**********************************************")
+
+driver.get("https://the-internet.herokuapp.com/login")
+
+def Login(username, password):
+    driver.find_element(By.ID, "username").send_keys(username)
+    driver.find_element(By.ID, "password").send_keys(password)
+    driver.find_element(By.CLASS_NAME, "radius").click()
+    result = driver.find_element(By.ID, "flash-messages").text
+    return result
+
+
+result = Login("asda", "123321")
+if "Your username is invalid!" in result:
+    print("Kullanici adi hatali...")
+else:
+    print("Kullanici adi doğru...")
+
+
+result = Login("tomsmith","123321")
+if "Your password is invalid!" in result:
+    print("Sifre hatali...")
+else:
+    print("Sifre dogru")
+
+result = Login("tomsmith","SuperSecretPassword!")
+if "You logged into a secure area!" in result:
+    print("Tebrikler Basarili Giris...")
+else:
+    print("Tekrar deneyiniz...")
+
 
 
 driver.quit()
