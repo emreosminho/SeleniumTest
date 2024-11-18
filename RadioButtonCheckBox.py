@@ -32,11 +32,11 @@ odeme_tipleri = odeme.options
 for tip in odeme_tipleri:
     print(tip.text)
 
-time.sleep(2)
+time.sleep(3)
 odeme.select_by_visible_text("Kredi Kartı")
-time.sleep(2)
-odeme.select_by_index(2)
-time.sleep(2)
+time.sleep(3)
+odeme.select_by_index(3)
+time.sleep(3)
 driver.find_element(By.ID,"siparis").click()
 time.sleep(3)
 driver.quit()
