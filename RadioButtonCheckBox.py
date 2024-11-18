@@ -12,6 +12,8 @@ driver.maximize_window()
 
 driver.get("https://tomspizzeria.b4a.app/")
 
+driver.find_element(By.ID,"musteri-adi").send_keys("Emre")
+
 middle = driver.find_element(By.CSS_SELECTOR, "input[value='Orta']")
 zeytin = driver.find_element(By.CSS_SELECTOR, "input[value='zeytin']")
 print(middle.is_selected())
@@ -35,6 +37,8 @@ odeme.select_by_visible_text("Kredi Kartı")
 time.sleep(2)
 odeme.select_by_index(2)
 time.sleep(2)
+driver.find_element(By.ID,"siparis").click()
+time.sleep(3)
 driver.quit()
 
 
