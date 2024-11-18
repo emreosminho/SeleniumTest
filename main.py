@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
@@ -20,6 +22,8 @@ driver.maximize_window()
 driver.get("http://www.example.com")
 
 driver.back()
+
+time.sleep(2)
 
 baslik = driver.title
 if "Example" in baslik:
